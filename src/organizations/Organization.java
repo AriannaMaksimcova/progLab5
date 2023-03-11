@@ -39,5 +39,13 @@ public class Organization {
                 ", postalAddress=" + postalAddress +
                 '}';
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public Address getPostalAddress() {
+        return postalAddress;
+    }
 }
 

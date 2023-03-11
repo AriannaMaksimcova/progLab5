@@ -4,14 +4,26 @@ import interfaces.Command;
 import tools.CommandList;
 
 public class RemoveLastCommand implements Command {
-    CommandList collection;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public RemoveLastCommand(CommandList collection) {
+    public RemoveLastCommand(String name, String description, CommandList collection) {
         this.collection = collection;
+        this.name = name;
+        this.description = description;
     }
 
     @Override
     public void execute() {
         collection.remove_last();
+    }
+
+    @Override
+    public String toString() {
+        return "RemoveLastCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

@@ -4,14 +4,26 @@ import interfaces.Command;
 import tools.CommandList;
 
 public class InfoCommand implements Command {
-    CommandList collection;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public InfoCommand(CommandList collection) {
+    public InfoCommand(String name, String description, CommandList collection) {
         this.collection = collection;
+        this.name = name;
+        this.description = description;
     }
 
     @Override
     public void execute() {
         collection.info();
+    }
+
+    @Override
+    public String toString() {
+        return "InfoCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

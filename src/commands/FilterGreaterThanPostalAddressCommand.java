@@ -1,19 +1,28 @@
 package commands;
 
 import interfaces.Command;
-import organizations.Address;
 import tools.CommandList;
 
 public class FilterGreaterThanPostalAddressCommand implements Command {
-    CommandList collection;
-    Address postalAddress;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public FilterGreaterThanPostalAddressCommand(CommandList collection, Address postalAddress) {
+    public FilterGreaterThanPostalAddressCommand(String name, String description, CommandList collection) {
         this.collection = collection;
-        this.postalAddress = postalAddress;
+        this.name = name;
+        this.description = description;
     }
     @Override
     public void execute(){
-        collection.filter_greater_than_postal_address(postalAddress);
+        collection.filter_greater_than_postal_address();
+    }
+
+    @Override
+    public String toString() {
+        return "FilterGreaterThanPostalAddressCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

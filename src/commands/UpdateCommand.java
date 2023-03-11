@@ -1,32 +1,29 @@
 package commands;
 
 import interfaces.Command;
-import organizations.Organization;
 import tools.CommandList;
 
-public class AddCommand implements Command {
-    private CommandList commandList;
-    private Organization organization;
+public class UpdateCommand implements Command {
+    private CommandList collection;
     private String name;
     private String description;
 
-
-    public AddCommand(String name, String description, CommandList commandList) {
+    public UpdateCommand(String name, String description, CommandList collection) {
+        this.collection = collection;
         this.name = name;
         this.description = description;
-        this.commandList = commandList;
     }
 
-    @Override
     public void execute() {
-        commandList.add();
+        collection.update();
     }
 
     @Override
     public String toString() {
-        return "AddCommand{" +
+        return "UpdateIDCommand{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }
 }
+

@@ -4,14 +4,26 @@ import interfaces.Command;
 import tools.CommandList;
 
 public class ExitCommand implements Command {
-    CommandList collection;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public ExitCommand(CommandList collection) {
+    public ExitCommand(String name, String description, CommandList collection) {
         this.collection = collection;
+        this.name = name;
+        this.description = description;
     }
 
     @Override
     public void execute() {
         collection.exit();
+    }
+
+    @Override
+    public String toString() {
+        return "ExitCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

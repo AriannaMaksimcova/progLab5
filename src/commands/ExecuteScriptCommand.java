@@ -4,16 +4,25 @@ import tools.CommandList;
 import java.io.File;
 
 public class ExecuteScriptCommand implements Command {
-    CommandList collection;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    File file;
-
-    public ExecuteScriptCommand(CommandList collection, File file) {
+    public ExecuteScriptCommand(String name, String description, CommandList collection) {
         this.collection = collection;
-        this.file = file;
+        this.name = name;
+        this.description = description;
     }
     @Override
     public void execute(){
-        collection.execute_script(file);
+        collection.execute_script();
+    }
+
+    @Override
+    public String toString() {
+        return "ExecuteScriptCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

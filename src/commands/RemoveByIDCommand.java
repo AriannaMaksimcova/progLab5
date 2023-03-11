@@ -3,16 +3,26 @@ import interfaces.Command;
 import tools.CommandList;
 
 public class RemoveByIDCommand implements Command {
-    CommandList collection;
-    int id;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public RemoveByIDCommand(CommandList collection, int id) {
+    public RemoveByIDCommand(String name, String description, CommandList collection) {
         this.collection = collection;
-        this.id = id;
+        this.name = name;
+        this.description = description;
     }
 
     @Override
     public void execute() {
-        collection.remove_by_id(id);
+        collection.remove_by_id();
+    }
+
+    @Override
+    public String toString() {
+        return "RemoveByIDCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

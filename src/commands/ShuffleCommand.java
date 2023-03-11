@@ -4,14 +4,26 @@ import interfaces.Command;
 import tools.CommandList;
 
 public class ShuffleCommand implements Command {
-    CommandList collection;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public ShuffleCommand(CommandList collection) {
+    public ShuffleCommand(String name, String description, CommandList collection) {
         this.collection = collection;
+        this.name = name;
+        this.description = description;
     }
 
     @Override
     public void execute() {
         collection.shuffle();
+    }
+
+    @Override
+    public String toString() {
+        return "ShuffleCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

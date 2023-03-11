@@ -5,16 +5,25 @@ import organizations.Organization;
 import tools.CommandList;
 
 public class RemoveLoverCommand implements Command {
-    CommandList collection;
-    Organization organization;
+    private CommandList collection;
+    private String name;
+    private String description;
 
-    public RemoveLoverCommand(CommandList collection, Organization organization) {
+    public RemoveLoverCommand(String name, String description, CommandList collection) {
         this.collection = collection;
-        this.organization = organization;
+        this.name = name;
+        this.description = description;
     }
     @Override
     public void execute(){
-        collection.remove_lower(organization);
+        collection.remove_lower();
     }
 
+    @Override
+    public String toString() {
+        return "RemoveLoverCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
