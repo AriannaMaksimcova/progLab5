@@ -1,8 +1,9 @@
 package tools;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import organizations.*;
 
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,44 +12,46 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class ReadDataFromFileClass {
-    Stack<Organization> organizations = new Stack<>();
+    private Stack<Organization> organizations = new Stack<>();
+    private File file;
 
-    public Stack<Organization> readData(File file) throws IOException, EOFException {
+    public ReadDataFromFileClass(Stack<Organization> organizations, File file) {
+        this.organizations = organizations;
+        this.file = file;
+    }
+
+    public Stack<Organization> readData() throws IOException, CsvValidationException {
         Scanner console = new Scanner(System.in);
         // Открытие заданного файла и чтение данных из него (построчно)
         if (!file.exists()) {
-            System.out.println("Файла с таким названием не существует. Хотите создать новый файл? (y or n)");
+            System.out.println("There is no file with this name. Do you want to create a new file? (y or n)");
             if (console.nextLine() == "y") {
                 file.createNewFile();
             } else {
-                System.out.println("Для продолжения работы программы выйдите из неё и запустите ещё раз с правильным именем файла.");
+                System.out.println("To continue working with the program, exit it and run it again with the correct file name.");
             }
         }
-        Scanner fileScanner = new Scanner(new FileReader(file));
         CSVReader csvReader = new CSVReader(new FileReader(file));
-
-        // пока не конец файла
-        while (true) {
-            String buff = fileScanner.nextLine();
-            String[] string = buff.split(";");
-                    int id = Integer.parseInt(string[0]);
-                    String name = string[1];
-                    Float x = Float.parseFloat(string[2].split(",")[0]);
-                    Integer y = Integer.parseInt(string[2].split(",")[1]);
-                    Coordinates coordinates = new Coordinates(x, y);
-                    LocalDate creationDate = LocalDate.parse(string[3]);
-                    Integer annualTurnover = Integer.parseInt(string[4]);
-                    String fullName = string[5];
-                    long employeeCount = Long.parseLong(string[6]);
-                    OrganizationType type = OrganizationType.valueOf(string[7]);
-                    String[] address = string[8].split(",");
-                    String[] coordinatesForLocation = address[1].split(" ");
-                    Location location = new Location(Double.parseDouble(coordinatesForLocation[0]), Integer.parseInt(coordinatesForLocation[1]), Long.parseLong(coordinatesForLocation[2]));
-                    Address postalAddress = new Address(address[0], location);
-                    Organization organization = new Organization(id, name, coordinates, creationDate, annualTurnover, fullName, employeeCount, type, postalAddress);
-                    organizations.push(organization);
-                    System.out.println("Некорректные данные. Проверьте корректность данных в файле.");
-                    }
-
-            }
+        String[] record;
+        while((record = csvReader.readNext()) != null){
+            int id = Integer.parseInt(record[0]);
+            String name = record[1];
+            Float x = Float.parseFloat(record[2].split(",")[0]);
+            Integer y = Integer.parseInt(record[2].split(",")[1]);
+            Coordinates coordinates = new Coordinates(x, y);
+            LocalDate creationDate = LocalDate.parse(record[3]);
+            Integer annualTurnover = Integer.parseInt(record[4]);
+            String fullName = record[5];
+            long employeeCount = Long.parseLong(record[6]);
+            OrganizationType type = OrganizationType.valueOf(record[7]);
+            String[] address = record[8].split(",");
+            String[] coordinatesForLocation = address[1].split(" ");
+            Location location = new Location(Double.parseDouble(coordinatesForLocation[0]), Integer.parseInt(coordinatesForLocation[1]), Long.parseLong(coordinatesForLocation[2]));
+            Address postalAddress = new Address(address[0], location);
+            Organization organization = new Organization(id, name, coordinates, creationDate, annualTurnover, fullName, employeeCount, type, postalAddress);
+            organizations.push(organization);
         }
+        csvReader.close();
+        return organizations;
+    }
+}

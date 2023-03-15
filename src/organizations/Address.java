@@ -1,8 +1,8 @@
 package organizations;
 
 public class Address {
-    private String zipCode; //Поле может быть null
-    private Location town; //Поле может быть null
+    private final String zipCode; //Поле может быть null
+    private final Location town; //Поле может быть null
 
     public Address(String zipCode, Location town) {
         this.zipCode = zipCode;
@@ -25,5 +25,13 @@ public class Address {
         int result = zipCode.hashCode();
         result = 31 * result + town.hashCode();
         return result;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public Location getTown() {
+        return town;
     }
 }

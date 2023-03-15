@@ -10,4 +10,16 @@ public class Location {
         this.y = y;
         this.z = z;
     }
+
+    public double getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Long getZ() {
+        return z;
+    }
 }

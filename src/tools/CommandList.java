@@ -1,9 +1,9 @@
 package tools;
 
 
-import organizations.*;
 import interfaces.Command;
-import java.io.File;
+import organizations.*;
+
 import java.time.LocalDate;
 import java.util.*;
 
@@ -96,8 +96,7 @@ public class CommandList {
         int id = scanner.nextInt();
         System.out.println("Enter new values:");
         Organization organization = readOrganization();
-        stack.elementAt(id) = organization;
-        //???
+        stack.set(id, organization);
     }
     public void remove_by_id(){
         System.out.println("Enter organization's id:");
@@ -110,11 +109,6 @@ public class CommandList {
     public void save(){
         writeDataIntoFile.writeData();
     }
-    public void execute_script(){
-        System.out.println("Enter the address of the script file:");
-        File file = new File(scanner.nextLine());
-        // ???
-    }
     public void exit(){
         System.exit(0);
     }
@@ -125,8 +119,9 @@ public class CommandList {
         Collections.shuffle(stack);
     }
     public void remove_lower(){
+        OrganizationsComparator comparator = new OrganizationsComparator();
         Organization organization = readOrganization();
-        stack.removeIf(element -> element < organization);
+        stack.removeIf(element -> comparator.compare(element, organization) < 0);
         }
     public void remove_all_by_postal_address(){
         Address postalAddress = readAddress();
@@ -137,8 +132,9 @@ public class CommandList {
     }
     public void filter_greater_than_postal_address(){
         Address postalAddress = readAddress();
+        AddressComparator comparator = new AddressComparator();
         for (Organization element : stack) {
-            if ("element.getPostalAddress() больше postalAddress".length() > 0){ // ***
+            if (comparator.compare(element.getPostalAddress(), postalAddress) > 0){
                 System.out.println(element);
             }
         }

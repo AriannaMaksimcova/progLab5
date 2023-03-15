@@ -1,10 +1,9 @@
 package tools;
+
 import commands.*;
 import interfaces.Command;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.SortedSet;
 
 public class CommandExecutor {
     private static LinkedHashMap<String, Command> commands;
@@ -27,7 +26,7 @@ public class CommandExecutor {
         commands.put("save", new SaveCommand("save", "сохранить коллекцию в файл", commandList));
         commands.put("execute_script", new ExecuteScriptCommand("execute_script", "считать и исполнить" +
                 " скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит " +
-                "пользователь в интерактивном режиме.", commandList));
+                "пользователь в интерактивном режиме.", this));
         commands.put("exit", new ExitCommand("exit", "завершить программу (без сохранения в файл)", commandList));
         commands.put("remove_last", new RemoveLastCommand("remove_last", "удалить последний элемент " +
                 "из коллекции", commandList));
