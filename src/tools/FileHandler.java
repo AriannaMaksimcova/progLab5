@@ -1,25 +1,49 @@
 package tools;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import com.opencsv.ICSVWriter;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import com.opencsv.exceptions.CsvValidationException;
 import organizations.*;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ReadDataFromFileClass {
-    private Stack<Organization> organizations = new Stack<>();
+public class FileHandler {
+    private Stack<Organization> organizations;
     private File file;
 
-    public ReadDataFromFileClass(Stack<Organization> organizations, File file) {
+    public FileHandler(Stack<Organization> organizations, File file) {
         this.organizations = organizations;
         this.file = file;
     }
+    public void writeData(){
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            StatefulBeanToCsv<Organization> csvWriter = new StatefulBeanToCsvBuilder<Organization>((ICSVWriter) fileOutputStream)
+                    .withSeparator(';').withQuotechar(CSVWriter.NO_QUOTE_CHARACTER)
+                    .withEscapechar(CSVWriter.DEFAULT_ESCAPE_CHARACTER).withLineEnd(CSVWriter.DEFAULT_LINE_END)
+                    .withOrderedResults(false).build();
+            csvWriter.write(organizations);
 
+            fileOutputStream.close();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+        } catch (CsvRequiredFieldEmptyException e) {
+            System.out.println("Something went wrong. Check your data.");
+        } catch (CsvDataTypeMismatchException e) {
+            System.out.println("Something went wrong. Check your data.");
+        } catch (IOException e) {
+            System.out.println("Something went wrong. Check your data.");
+        }
+    }
     public Stack<Organization> readData() throws IOException, CsvValidationException {
         Scanner console = new Scanner(System.in);
         // Открытие заданного файла и чтение данных из него (построчно)
@@ -28,7 +52,7 @@ public class ReadDataFromFileClass {
             if (console.nextLine() == "y") {
                 file.createNewFile();
             } else {
-                System.out.println("To continue working with the program, exit it and run it again with the correct file name.");
+                System.out.println("To continue working with the program, exit and rerun it with the correct file name.");
             }
         }
         CSVReader csvReader = new CSVReader(new FileReader(file));

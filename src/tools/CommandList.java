@@ -1,6 +1,5 @@
 package tools;
 
-
 import interfaces.Command;
 import organizations.*;
 
@@ -9,11 +8,11 @@ import java.util.*;
 
 public class CommandList {
     private Stack<Organization> stack;
-    private WriteDataIntoFileClass writeDataIntoFile;
+    private FileHandler fileHandler;
     private Scanner scanner;
-    public CommandList(Stack<Organization> stack, WriteDataIntoFileClass writeDataIntoFile) {
+    public CommandList(Stack<Organization> stack, FileHandler fileHandler) {
         this.stack = stack;
-        this.writeDataIntoFile = writeDataIntoFile;
+        this.fileHandler = fileHandler;
         scanner = new Scanner(System.in);
     }
 
@@ -34,80 +33,36 @@ public class CommandList {
         }
     }
     public void add(){
-
-        int id = generateID();
-
-        System.out.println("Organization's name:");
-        String name = scanner.nextLine();
-        while(name == "" || name == null){
-            System.out.println("Try again");
-            name = scanner.nextLine();
-        }
-
-        System.out.println("Enter the X coordinate:");
-        Float x = scanner.nextFloat();
-        while(x > 75 || x == null){
-            System.out.println("X has to be <= 75 and can't be null. Try again.");
-            x = scanner.nextFloat();
-        }
-
-        System.out.println("Enter the Y coordinate:");
-        Integer y = scanner.nextInt();
-        while(y < -177 || y == null){
-            System.out.println("Y has to be > -177 and can't be null. Try again.");
-            y = scanner.nextInt();
-        }
-
-        LocalDate creationDate = LocalDate.now();
-
-        System.out.println("Enter annual turnover:");
-        Integer annualTurnover = scanner.nextInt();
-        while (annualTurnover <= 0){
-            System.out.println("Annual turnover has to be > 0. Try again.");
-            annualTurnover = scanner.nextInt();
-        }
-
-        System.out.println("Enter full name:");
-        String fullName = scanner.nextLine();
-
-        System.out.println("Enter employee count:");
-        long employeeCount = scanner.nextLong();
-        while (employeeCount <= 0){
-            System.out.println("Employee count has to be > 0. Try again.");
-            employeeCount = scanner.nextLong();
-        }
-
-        System.out.println("Enter organization type from list \"COMMERCIAL, PUBLIC, GOVERNMENT," +
-                " PRIVATE_LIMITED_COMPANY, OPEN_JOINT_STOCK_COMPANY\":");
-        String orgType = scanner.nextLine();
-        while(orgType == null){
-            System.out.println("Organization type can't be null. Try again.");
-            orgType = scanner.nextLine();
-        }
-        OrganizationType organizationType = OrganizationType.valueOf(orgType.toUpperCase());
-
-        Address postalAddress = readAddress();
-
-        stack.push(new Organization(id, name, new Coordinates(x, y), creationDate, annualTurnover, fullName,
-                employeeCount, organizationType, postalAddress));
+        stack.push(readOrganization());
     }
     public void update(){
         System.out.println("Enter id of the organization, that you want to update:");
         int id = scanner.nextInt();
         System.out.println("Enter new values:");
         Organization organization = readOrganization();
+        for(int i = 0; i < stack.size(); i++){
+            if(stack.get(i).getId() == id){
+                stack.set(i, organization);
+                break;
+            }
+        }
         stack.set(id, organization);
     }
     public void remove_by_id(){
         System.out.println("Enter organization's id:");
         int id = scanner.nextInt();
-        stack.removeElementAt(id);
+        for(Organization o : stack){
+            if(o.getId() == id){
+                stack.remove(o);
+                break;
+            }
+        }
     }
     public void clear(){
         stack.clear();
     }
     public void save(){
-        writeDataIntoFile.writeData();
+        fileHandler.writeData();
     }
     public void exit(){
         System.exit(0);
@@ -148,33 +103,28 @@ public class CommandList {
         int y2 = scanner.nextInt();
         System.out.println("Enter coordinate Z of town location:");
         Long z2 = scanner.nextLong();
-        while(z2 == null){
-            System.out.println("Coordinate Z can't be null. Try again.");
-            z2 = scanner.nextLong();
-        }
         return new Address(zipCode, new Location(x2, y2, z2));
     }
     public Organization readOrganization(){
-        System.out.println("Enter organization's id:");
-        int id = scanner.nextInt();
+        int id = generateID();
 
         System.out.println("Organization's name:");
         String name = scanner.nextLine();
-        while(name == "" || name == null){
+        while(Objects.equals(name, "") || name == null){
             System.out.println("Try again");
             name = scanner.nextLine();
         }
 
         System.out.println("Enter the X coordinate:");
-        Float x = scanner.nextFloat();
-        while(x > 75 || x == null){
+        float x = scanner.nextFloat();
+        while(x > 75){
             System.out.println("X has to be <= 75 and can't be null. Try again.");
             x = scanner.nextFloat();
         }
 
         System.out.println("Enter the Y coordinate:");
-        Integer y = scanner.nextInt();
-        while(y < -177 || y == null){
+        int y = scanner.nextInt();
+        while(y < -177){
             System.out.println("Y has to be > -177 and can't be null. Try again.");
             y = scanner.nextInt();
         }
@@ -182,7 +132,7 @@ public class CommandList {
         LocalDate creationDate = LocalDate.now();
 
         System.out.println("Enter annual turnover:");
-        Integer annualTurnover = scanner.nextInt();
+        int annualTurnover = scanner.nextInt();
         while (annualTurnover <= 0){
             System.out.println("Annual turnover has to be > 0. Try again.");
             annualTurnover = scanner.nextInt();

@@ -13,7 +13,7 @@ public class Main {
         File file = new File(args[0]);
 
         //чтение данных из файла
-        ReadDataFromFileClass readDataFromFile = new ReadDataFromFileClass(organizations, file);
+        ReaderDataFromFile readDataFromFile = new ReaderDataFromFile(organizations, file);
         try {
             readDataFromFile.readData();
         } catch (CsvValidationException | IOException e){
@@ -27,7 +27,7 @@ public class Main {
 
         //чтение команды из консоли и её исполнение
         while (true){
-            ReadCommandFromConsoleClass readCommandFromConsole = new ReadCommandFromConsoleClass(commandExecutor);
+            ReaderCommandFromConsole readCommandFromConsole = new ReaderCommandFromConsole(commandExecutor);
             readCommandFromConsole.readCommand();
         }
 

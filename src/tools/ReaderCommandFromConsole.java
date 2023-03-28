@@ -2,11 +2,11 @@ package tools;
 
 import java.util.Scanner;
 
-public class ReadCommandFromConsoleClass {
+public class ReaderCommandFromConsole {
     private CommandExecutor commandExecutor;
     private Scanner console;
 
-    public ReadCommandFromConsoleClass(CommandExecutor commandExecutor) {
+    public ReaderCommandFromConsole(CommandExecutor commandExecutor) {
         this.commandExecutor = commandExecutor;
         console = new Scanner(System.in);
     }
