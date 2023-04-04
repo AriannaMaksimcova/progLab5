@@ -1,5 +1,5 @@
 package interfaces;
 @FunctionalInterface
 public interface Command {
-    public void execute();
+    public void execute(String arg);
 }

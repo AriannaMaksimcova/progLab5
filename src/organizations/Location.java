@@ -22,4 +22,9 @@ public class Location {
     public Long getZ() {
         return z;
     }
+
+    @Override
+    public String toString() {
+        return x + ";" + y + ";" + z;
+    }
 }

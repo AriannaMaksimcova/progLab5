@@ -18,7 +18,7 @@ public class AddCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(String arg) {
         commandList.add();
     }
 

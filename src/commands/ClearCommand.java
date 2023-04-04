@@ -15,7 +15,7 @@ public class ClearCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(String arg) {
         collection.clear();
     }
 

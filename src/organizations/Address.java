@@ -1,5 +1,7 @@
 package organizations;
 
+import java.util.Scanner;
+
 public class Address {
     private final String zipCode; //Поле может быть null
     private final Location town; //Поле может быть null
@@ -7,6 +9,20 @@ public class Address {
     public Address(String zipCode, Location town) {
         this.zipCode = zipCode;
         this.town = town;
+    }
+
+    public static Address readAddress(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter zip code for address:");
+        String zipCode = scanner.nextLine(); //todo: validation
+        System.out.println("Enter coordinate X of town location:");
+        double x2 = scanner.nextDouble(); //todo: validation
+        System.out.println("Enter coordinate Y of town location:");
+        int y2 = scanner.nextInt();//todo: validation
+        System.out.println("Enter coordinate Z of town location:");
+        Long z2 = scanner.nextLong();//todo: validation
+        scanner.close();
+        return new Address(zipCode, new Location(x2, y2, z2));
     }
 
     @Override

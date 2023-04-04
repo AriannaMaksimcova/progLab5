@@ -43,8 +43,15 @@ public class CommandExecutor {
                         "вывести элементы, значение поля postalAddress которых больше заданного",commandList));
     }
 
-    public void executeCommand (String command){
-        this.commands.get(command).execute();
+    public void executeCommand (String command, String arg){
+        try {
+            if (commands.containsKey(command)) {
+                this.commands.get(command).execute(arg);
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public static LinkedHashMap<String, Command> getCommands() {

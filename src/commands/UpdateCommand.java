@@ -13,9 +13,9 @@ public class UpdateCommand implements Command {
         this.name = name;
         this.description = description;
     }
-
-    public void execute() {
-        collection.update();
+    @Override
+    public void execute(String arg) {
+        collection.update(arg);
     }
 
     @Override

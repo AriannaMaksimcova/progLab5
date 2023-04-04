@@ -14,7 +14,7 @@ public class FilterGreaterThanPostalAddressCommand implements Command {
         this.description = description;
     }
     @Override
-    public void execute(){
+    public void execute(String arg){
         collection.filter_greater_than_postal_address();
     }
 

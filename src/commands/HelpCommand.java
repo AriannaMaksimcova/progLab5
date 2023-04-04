@@ -15,9 +15,15 @@ public class HelpCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(String arg) {
         commandList.help();
     }
 
-
+    @Override
+    public String toString() {
+        return "HelpCommand{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

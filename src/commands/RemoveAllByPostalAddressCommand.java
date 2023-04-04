@@ -1,8 +1,7 @@
 package commands;
 
-import organizations.Address;
-import tools.CommandList;
 import interfaces.Command;
+import tools.CommandList;
 
 public class RemoveAllByPostalAddressCommand implements Command{
     private CommandList collection;
@@ -15,7 +14,7 @@ public class RemoveAllByPostalAddressCommand implements Command{
         this.description = description;
     }
     @Override
-    public void execute(){
+    public void execute(String arg){
         collection.remove_all_by_postal_address();
     }
 

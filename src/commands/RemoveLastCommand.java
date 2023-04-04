@@ -15,7 +15,7 @@ public class RemoveLastCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(String arg) {
         collection.remove_last();
     }
 

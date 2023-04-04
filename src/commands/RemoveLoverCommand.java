@@ -1,7 +1,6 @@
 package commands;
 
 import interfaces.Command;
-import organizations.Organization;
 import tools.CommandList;
 
 public class RemoveLoverCommand implements Command {
@@ -15,7 +14,7 @@ public class RemoveLoverCommand implements Command {
         this.description = description;
     }
     @Override
-    public void execute(){
+    public void execute(String arg){
         collection.remove_lower();
     }
 

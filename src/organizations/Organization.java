@@ -27,18 +27,11 @@ public class Organization{
 
     @Override
     public String toString() {
-        return "Organizations.Organization{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
-                ", annualTurnover=" + annualTurnover +
-                ", fullName='" + fullName + '\'' +
-                ", employeesCount=" + employeesCount +
-                ", type=" + type +
-                ", postalAddress=" + postalAddress +
-                '}';
+        return id + ";" + name + ";" + coordinates.getX() + ";" + coordinates.getY() + ";" + creationDate + ";"
+                + annualTurnover + ";" + fullName + ";" + employeesCount + ";" + type + ";"
+                + postalAddress.getZipCode() + ";" + postalAddress.getTown().toString();
     }
+
 
     public int getId() {
         return id;

@@ -15,7 +15,7 @@ public class MinByFullNameCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(String arg) {
         collection.min_by_full_name();
     }
 

@@ -1,9 +1,12 @@
-import com.opencsv.exceptions.CsvValidationException;
 import organizations.Organization;
-import tools.*;
+import tools.CommandExecutor;
+import tools.CommandList;
+import tools.FileHandler;
+import tools.ConsoleManager;
 
 import java.io.File;
-import java.io.IOException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Main {
@@ -11,25 +14,37 @@ public class Main {
         //Создание коллекции
         Stack<Organization> organizations = new Stack<>();
         File file = new File(args[0]);
+        Scanner scanner = new Scanner(System.in);
 
         //чтение данных из файла
-        ReaderDataFromFile readDataFromFile = new ReaderDataFromFile(organizations, file);
-        try {
-            readDataFromFile.readData();
-        } catch (CsvValidationException | IOException e){
-            System.out.println("Unable to read data from file.");
-        }
+        FileHandler fileHandler = new FileHandler(organizations, file);
+        fileHandler.readData();
 
 
-        WriteDataIntoFileClass writeDataIntoFile = new WriteDataIntoFileClass(file, organizations);
-        CommandList commandList = new CommandList(organizations, writeDataIntoFile);
+        CommandList commandList = new CommandList(organizations, fileHandler, scanner);
         CommandExecutor commandExecutor = new CommandExecutor(commandList);
-
+        ConsoleManager consoleManager = new ConsoleManager(commandExecutor, scanner);
         //чтение команды из консоли и её исполнение
-        while (true){
-            ReaderCommandFromConsole readCommandFromConsole = new ReaderCommandFromConsole(commandExecutor);
-            readCommandFromConsole.readCommand();
+        while (true) {
+            System.out.println("Введите команду. Если не знакомы с командами, введите \"help\".");
+            String input = scanner.nextLine();
+            try {
+                String[] commandline = input.split(" ");
+                String command = commandline[0];
+                if (commandline.length >= 2) {
+                    String arg = commandline[1];
+                    commandExecutor.executeCommand(command, arg);
+                } else if (commandline.length == 1) {
+                    commandExecutor.executeCommand(command, "");
+                }
+            }
+            catch(NullPointerException e) {
+                System.out.println("Данной команды не найдено");
+            }
+            catch (NoSuchElementException e) {
+                System.out.println("Завершаемся..");
+                break;
+            }
         }
-
         }
 }

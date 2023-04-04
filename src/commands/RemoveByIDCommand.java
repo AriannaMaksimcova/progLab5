@@ -14,8 +14,8 @@ public class RemoveByIDCommand implements Command {
     }
 
     @Override
-    public void execute() {
-        collection.remove_by_id();
+    public void execute(String arg) {
+        collection.remove_by_id(arg);
     }
 
     @Override
