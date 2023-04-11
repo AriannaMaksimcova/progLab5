@@ -44,15 +44,12 @@ public class CommandExecutor {
     }
 
     public void executeCommand (String command, String arg){
-        try {
             if (commands.containsKey(command)) {
                 this.commands.get(command).execute(arg);
+            } else{
+                System.out.println("There is no such command.");
             }
         }
-        catch (Exception e) {
-            System.out.println(e);
-        }
-    }
 
     public static LinkedHashMap<String, Command> getCommands() {
         return commands;

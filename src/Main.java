@@ -2,7 +2,6 @@ import organizations.Organization;
 import tools.CommandExecutor;
 import tools.CommandList;
 import tools.FileHandler;
-import tools.ConsoleManager;
 
 import java.io.File;
 import java.util.NoSuchElementException;
@@ -18,31 +17,31 @@ public class Main {
 
         //чтение данных из файла
         FileHandler fileHandler = new FileHandler(organizations, file);
-        fileHandler.readData();
+        organizations = fileHandler.readData();
 
 
         CommandList commandList = new CommandList(organizations, fileHandler, scanner);
         CommandExecutor commandExecutor = new CommandExecutor(commandList);
-        ConsoleManager consoleManager = new ConsoleManager(commandExecutor, scanner);
+
         //чтение команды из консоли и её исполнение
         while (true) {
-            System.out.println("Введите команду. Если не знакомы с командами, введите \"help\".");
-            String input = scanner.nextLine();
+            System.out.println("Enter the command. If you are not familiar with the commands, enter \"help\".");
             try {
+            String input = scanner.nextLine();
                 String[] commandline = input.split(" ");
                 String command = commandline[0];
                 if (commandline.length >= 2) {
                     String arg = commandline[1];
                     commandExecutor.executeCommand(command, arg);
-                } else if (commandline.length == 1) {
+                } else{
                     commandExecutor.executeCommand(command, "");
                 }
             }
             catch(NullPointerException e) {
-                System.out.println("Данной команды не найдено");
+                System.out.println("This command was not found.");
             }
             catch (NoSuchElementException e) {
-                System.out.println("Завершаемся..");
+                commandExecutor.executeCommand("exit", "");
                 break;
             }
         }

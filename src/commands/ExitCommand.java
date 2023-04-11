@@ -21,9 +21,6 @@ public class ExitCommand implements Command {
 
     @Override
     public String toString() {
-        return "ExitCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

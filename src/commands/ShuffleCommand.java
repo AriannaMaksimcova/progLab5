@@ -21,9 +21,6 @@ public class ShuffleCommand implements Command {
 
     @Override
     public String toString() {
-        return "ShuffleCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

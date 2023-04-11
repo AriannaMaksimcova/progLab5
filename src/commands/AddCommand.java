@@ -24,9 +24,6 @@ public class AddCommand implements Command {
 
     @Override
     public String toString() {
-        return "AddCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

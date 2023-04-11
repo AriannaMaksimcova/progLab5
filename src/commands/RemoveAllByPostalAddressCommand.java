@@ -20,9 +20,6 @@ public class RemoveAllByPostalAddressCommand implements Command{
 
     @Override
     public String toString() {
-        return "RemoveAllByPostalAddressCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

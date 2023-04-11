@@ -21,9 +21,6 @@ public class InfoCommand implements Command {
 
     @Override
     public String toString() {
-        return "InfoCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

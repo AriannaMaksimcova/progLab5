@@ -21,9 +21,6 @@ public class MinByFullNameCommand implements Command {
 
     @Override
     public String toString() {
-        return "MinByFullNameCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

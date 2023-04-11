@@ -25,7 +25,9 @@ public class CommandList {
 
     }
     public void info(){
-        System.out.println(stack.toString());
+        System.out.println("Collection type: Stack.");
+        System.out.println("Object class: Organization.");
+        System.out.println("Number of elements: " + stack.size() + ".");
 
     }
     public void show(){
@@ -35,38 +37,47 @@ public class CommandList {
     }
     public void add(){
         stack.push(organizationReader.readOrganization());
-        System.out.println(stack.get(0));
     }
-    public void update(String arg){
-        int id = Integer.parseInt(arg); //todo: validation
-        System.out.println("Enter new values:");
-        Organization organization = organizationReader.readOrganization();
-        boolean updated = false;
-        for(int i = 0; i < stack.size(); i++){
-            if(stack.get(i).getId() == id){
-                stack.set(i, organization);
-                updated = true;
-                break;
+    public void update(String arg) {
+        try {
+            int id = Integer.parseInt(arg);
+            System.out.println("Enter new values:");
+            Organization organization = organizationReader.readOrganization();
+            boolean updated = false;
+            for (int i = 0; i < stack.size(); i++) {
+                if (stack.get(i).getId() == id) {
+                    stack.set(i, organization);
+                    updated = true;
+                    break;
+                }
             }
-        } if(!updated){
-            System.out.println("No such element in collection.");
-        }
+            if (!updated) {
+                System.out.println("No such element in collection.");
+            }
 
-    }
-    public void remove_by_id(String arg){
-        int id = Integer.parseInt(arg); //todo: validation
-        boolean removed = false;
-        for(Organization o : stack){
-            if(o.getId() == id){
-                stack.remove(o);
-                removed = true;
-                break;
-            }
-        }if (!removed){
-            System.out.println("No such element in collection.");
+        } catch (NumberFormatException e) {
+            System.out.println("Incorrect format of id.");
         }
     }
-    public void clear(){
+    public void remove_by_id(String arg) {
+        try {
+            int id = Integer.parseInt(arg);
+            boolean removed = false;
+            for (Organization o : stack) {
+                if (o.getId() == id) {
+                    stack.remove(o);
+                    removed = true;
+                    break;
+                }
+            }
+            if (!removed) {
+                System.out.println("No such element in collection.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Incorrect format of id.");
+        }
+    }
+    public void clear (){
         stack.clear();
     }
     public void save(){
@@ -93,7 +104,7 @@ public class CommandList {
     }
     public void min_by_full_name(){
         Stack<Organization> organizations = stack;
-        Collections.sort(organizations, new FullNameComparator());
+        organizations.sort(new FullNameComparator());
         System.out.println(organizations.peek());
     }
     public void filter_greater_than_postal_address(){

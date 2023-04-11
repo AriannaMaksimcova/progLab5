@@ -21,9 +21,6 @@ public class ClearCommand implements Command {
 
     @Override
     public String toString() {
-        return "ClearCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

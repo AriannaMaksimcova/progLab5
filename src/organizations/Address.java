@@ -14,14 +14,43 @@ public class Address {
     public static Address readAddress(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter zip code for address:");
-        String zipCode = scanner.nextLine(); //todo: validation
+        String zipCode = scanner.nextLine();
         System.out.println("Enter coordinate X of town location:");
-        double x2 = scanner.nextDouble(); //todo: validation
+        double x2;
+        while(true) {
+            String x = scanner.nextLine();
+            try {
+                x2 = Double.parseDouble(x);
+                break;
+            }
+            catch (NumberFormatException e){
+                System.out.println("Incorrect input data");
+            }
+        }
         System.out.println("Enter coordinate Y of town location:");
-        int y2 = scanner.nextInt();//todo: validation
+        int y2;
+        while(true) {
+            String y = scanner.nextLine();
+            try {
+                y2 = Integer.parseInt(y);
+                break;
+            }
+            catch (NumberFormatException e){
+                System.out.println("Incorrect input data");
+            }
+        }
         System.out.println("Enter coordinate Z of town location:");
-        Long z2 = scanner.nextLong();//todo: validation
-        scanner.close();
+        Long z2;
+        while(true) {
+            String z = scanner.nextLine();
+            try {
+                z2 = Long.parseLong(z);
+                break;
+            }
+            catch (NumberFormatException e){
+                System.out.println("Incorrect input data");
+            }
+        }
         return new Address(zipCode, new Location(x2, y2, z2));
     }
 
@@ -49,5 +78,10 @@ public class Address {
 
     public Location getTown() {
         return town;
+    }
+
+    @Override
+    public String toString() {
+        return zipCode + ": " + town;
     }
 }

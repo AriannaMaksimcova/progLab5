@@ -20,10 +20,7 @@ public class UpdateCommand implements Command {
 
     @Override
     public String toString() {
-        return "UpdateIDCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }
 

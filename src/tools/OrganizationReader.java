@@ -55,7 +55,7 @@ public class OrganizationReader {
         System.out.println("Organization's name:");
         String name = scanner.nextLine();
         while(Objects.equals(name, "") || name == null){
-            System.out.println("Try again");
+            System.out.println("Try again.");
             name = scanner.nextLine();
         }
         return name;
@@ -66,8 +66,7 @@ public class OrganizationReader {
         while(!validator.validateCoordinateX(str)){
             str = scanner.nextLine().replace(",",".");
         }
-        float x = Float.parseFloat(str);
-        return x;
+        return Float.parseFloat(str);
     }
     private int readCoordinateY(){
         System.out.println("Enter the Y coordinate:");
@@ -75,25 +74,32 @@ public class OrganizationReader {
         while(!validator.validateCoordinateY(str)){
             str = scanner.nextLine();
         }
-        int y = Integer.parseInt(str);
-        return y;
+        return Integer.parseInt(str);
     }
     private int readAnnualTurnover(){
         System.out.println("Enter annual turnover:");
-        while(!scanner.hasNextInt()){
-            System.out.println("Uncorrected format. Try again");
-            scanner.nextLine();
-        }
-        int annualTurnover = scanner.nextInt();
-        while (annualTurnover <= 0){
-            System.out.println("Annual turnover has to be > 0. Try again.");
-            annualTurnover = scanner.nextInt();
+        int annualTurnover;
+        while(true){
+            String annualTurnoverStr = scanner.nextLine();
+            try {
+                annualTurnover = Integer.parseInt(annualTurnoverStr);
+                if (annualTurnover <= 0) {
+                    System.out.println("Annual turnover has to be > 0.");
+                }
+                else{
+                    break;
+                }
+            }
+            catch (NumberFormatException e){
+                System.out.println("Incorrect input data.");
+
+            }
         }
         return annualTurnover;
     }
     private String readFullName(){
         System.out.println("Enter full name:");
-        String fullName = scanner.nextLine();
+        String fullName;
         while(true) {
             fullName = scanner.nextLine();
             if (fullName.trim().isEmpty()) {
@@ -113,14 +119,14 @@ public class OrganizationReader {
             try {
                 employeeCount = Long.parseLong(employeeCountStr);
                 if (employeeCount <= 0) {
-                    System.out.println("<= 0");
+                    System.out.println("Employee count has to be > 0.");
                 }
                 else{
                     break;
                 }
             }
             catch (NumberFormatException e){
-                System.out.println("incorrect input data");
+                System.out.println("Incorrect input data.");
 
             }
         }
@@ -135,7 +141,6 @@ public class OrganizationReader {
             System.out.println("Organization type can't be null and has to be from the list. Try again.");
             orgType = scanner.nextLine();
         }
-        OrganizationType organizationType = OrganizationType.valueOf(orgType.toUpperCase());
-        return organizationType;
+        return OrganizationType.valueOf(orgType.toUpperCase());
     }
 }

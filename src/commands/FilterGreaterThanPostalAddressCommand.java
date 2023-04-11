@@ -20,9 +20,6 @@ public class FilterGreaterThanPostalAddressCommand implements Command {
 
     @Override
     public String toString() {
-        return "FilterGreaterThanPostalAddressCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

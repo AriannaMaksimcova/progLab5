@@ -20,9 +20,6 @@ public class RemoveLoverCommand implements Command {
 
     @Override
     public String toString() {
-        return "RemoveLoverCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

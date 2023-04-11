@@ -21,9 +21,6 @@ public class SaveCommand implements Command {
 
     @Override
     public String toString() {
-        return "SaveCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

@@ -21,9 +21,6 @@ public class HelpCommand implements Command {
 
     @Override
     public String toString() {
-        return "HelpCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

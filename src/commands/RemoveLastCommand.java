@@ -21,9 +21,6 @@ public class RemoveLastCommand implements Command {
 
     @Override
     public String toString() {
-        return "RemoveLastCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }

@@ -20,9 +20,6 @@ public class RemoveByIDCommand implements Command {
 
     @Override
     public String toString() {
-        return "RemoveByIDCommand{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + ": " + description;
     }
 }
