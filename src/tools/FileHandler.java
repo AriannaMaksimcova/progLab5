@@ -19,7 +19,7 @@ public class FileHandler {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             for(Organization o : organizations){
-                fileOutputStream.write(o.toString().getBytes());
+                fileOutputStream.write(o.toCSV().getBytes());
             }
 
             fileOutputStream.close();

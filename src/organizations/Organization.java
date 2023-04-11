@@ -27,6 +27,20 @@ public class Organization{
 
     @Override
     public String toString() {
+        return "Organization{ " +
+                " id = " + id +
+                ", name = '" + name + '\'' +
+                ", coordinates = " + coordinates +
+                ", creationDate = " + creationDate +
+                ", annualTurnover = " + annualTurnover +
+                ", fullName = '" + fullName + '\'' +
+                ", employeesCount = " + employeesCount +
+                ", type = " + type +
+                ", postalAddress = " + postalAddress +
+                '}';
+    }
+
+    public String toCSV() {
         return id + ";" + name + ";" + coordinates.getX() + ";" + coordinates.getY() + ";" + creationDate + ";"
                 + annualTurnover + ";" + fullName + ";" + employeesCount + ";" + type + ";"
                 + postalAddress.getZipCode() + ";" + postalAddress.getTown().toString();

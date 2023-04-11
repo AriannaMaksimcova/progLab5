@@ -8,6 +8,13 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * Program entry point class. Contains main() method.
+ * This program is managing collection of Stack type
+ *
+ * @since 1.0
+ * @author AriannaMaksimcova
+ */
 public class Main {
     public static void main(String[] args){
         //Создание коллекции
