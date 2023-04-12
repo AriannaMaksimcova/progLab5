@@ -1,14 +1,12 @@
 package commands;
 
 import interfaces.Command;
-import organizations.Organization;
 import tools.CommandList;
 
 public class AddCommand implements Command {
-    private CommandList commandList;
-    private Organization organization;
-    private String name;
-    private String description;
+    private final CommandList commandList;
+    private final String name;
+    private final String description;
 
     /**
      * Class that allows to create command "add" and execute it.

@@ -20,6 +20,7 @@ public class Main {
         //Создание коллекции
         Stack<Organization> organizations = new Stack<>();
         File file = new File(args[0]);
+
         Scanner scanner = new Scanner(System.in);
 
         //чтение данных из файла

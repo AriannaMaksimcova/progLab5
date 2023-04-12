@@ -10,9 +10,9 @@ import java.util.*;
  * (Receiver)
  */
 public class CommandList {
-    private Stack<Organization> stack;
-    private FileHandler fileHandler;
-    private Scanner scanner;
+    private final Stack<Organization> stack;
+    private final FileHandler fileHandler;
+    private final Scanner scanner;
     OrganizationReader organizationReader;
     public CommandList(Stack<Organization> stack, FileHandler fileHandler, Scanner scanner) {
         this.stack = stack;

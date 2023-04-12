@@ -4,9 +4,9 @@ import interfaces.Command;
 import tools.*;
 
 public class HelpCommand implements Command {
-    private CommandList commandList;
-    private String name;
-    private String description;
+    private final CommandList commandList;
+    private final String name;
+    private final String description;
     /**
      * Class that allows to create command "help" and execute it.
      */

@@ -4,20 +4,20 @@ import interfaces.Command;
 import tools.CommandList;
 
 public class RemoveLoverCommand implements Command {
-    private CommandList collection;
-    private String name;
-    private String description;
+    private final CommandList commandList;
+    private final String name;
+    private final String description;
     /**
      * CLass that allows to create command "remove_lover" and execute it.
      */
-    public RemoveLoverCommand(String name, String description, CommandList collection) {
-        this.collection = collection;
+    public RemoveLoverCommand(String name, String description, CommandList commandList) {
+        this.commandList = commandList;
         this.name = name;
         this.description = description;
     }
     @Override
     public void execute(String arg){
-        collection.remove_lower();
+        commandList.remove_lower();
     }
 
     @Override

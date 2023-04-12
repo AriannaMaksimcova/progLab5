@@ -5,15 +5,15 @@ import java.time.LocalDate;
  * Class that allows you to create an organization and work with it.
  */
 public class Organization{
-    private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-    private String name; //Поле не может быть null, Строка не может быть пустой
-    private Coordinates coordinates; //Поле не может быть null
-    private java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    private Integer annualTurnover; //Поле может быть null, Значение поля должно быть больше 0
-    private String fullName; //Поле может быть null
-    private long employeesCount; //Значение поля должно быть больше 0
-    private OrganizationType type; //Поле не может быть null
-    private Address postalAddress; //Поле может быть null
+    private final int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private final String name; //Поле не может быть null, Строка не может быть пустой
+    private final Coordinates coordinates; //Поле не может быть null
+    private final java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private final Integer annualTurnover; //Поле может быть null, Значение поля должно быть больше 0
+    private final String fullName; //Поле может быть null
+    private final long employeesCount; //Значение поля должно быть больше 0
+    private final OrganizationType type; //Поле не может быть null
+    private final Address postalAddress; //Поле может быть null
 
     public Organization(int id, String name, Coordinates coordinates, LocalDate creationDate, Integer annualTurnover, String fullName, long employeesCount, OrganizationType type, Address postalAddress) {
         this.id = id;

@@ -3,9 +3,9 @@ package organizations;
  * Class that allows you to create a location and work with it.
  */
 public class Location {
-    private double x;
-    private int y;
-    private Long z; //Поле не может быть null
+    private final double x;
+    private final int y;
+    private final Long z; //Поле не может быть null
 
     public Location(double x, int y, Long z) {
         this.x = x;

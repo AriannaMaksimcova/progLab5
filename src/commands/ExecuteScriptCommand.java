@@ -38,7 +38,7 @@ public class ExecuteScriptCommand implements Command {
                 }
                 if(commandLine.length == 2){
                     String argument = commandLine[1];
-                    if(command == "execute_script"){
+                    if(command.equals("execute_script")){
                         if(filePaths.contains(argument)){
                             System.out.println("Command " + command + " " + argument + " has already been completed. " +
                                     "Further execution will lead to recursion.");

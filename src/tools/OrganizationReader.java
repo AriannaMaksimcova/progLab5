@@ -15,8 +15,8 @@ import java.util.TreeSet;
  * Class for reading organization from command line.
  */
 public class OrganizationReader {
-    private Stack<Organization> stack;
-    private Validator validator;
+    private final Stack<Organization> stack;
+    private final Validator validator;
     Scanner scanner;
 
     public OrganizationReader(Stack<Organization> stack, Scanner scanner) {
