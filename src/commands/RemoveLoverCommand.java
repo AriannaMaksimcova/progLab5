@@ -7,7 +7,9 @@ public class RemoveLoverCommand implements Command {
     private CommandList collection;
     private String name;
     private String description;
-
+    /**
+     * CLass that allows to create command "remove_lover" and execute it.
+     */
     public RemoveLoverCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

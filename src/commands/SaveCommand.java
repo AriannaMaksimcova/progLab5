@@ -8,6 +8,9 @@ public class SaveCommand implements Command {
     private String name;
     private String description;
 
+    /**
+     * CLass that allows to create command "save" and execute it.
+     */
     public SaveCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

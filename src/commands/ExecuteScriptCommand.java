@@ -13,7 +13,9 @@ public class ExecuteScriptCommand implements Command {
     private final String description;
     private final CommandExecutor commandExecutor;
 
-
+    /**
+     * Class that allows to create command "execute_script" and execute it.
+     */
     public ExecuteScriptCommand(String name, String description, CommandExecutor commandExecutor) {
         this.name = name;
 

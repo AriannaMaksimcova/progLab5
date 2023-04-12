@@ -7,7 +7,9 @@ public class ClearCommand implements Command {
     private CommandList collection;
     private String name;
     private String description;
-
+    /**
+     * Class that allows to create command "clear" and execute it.
+     */
     public ClearCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

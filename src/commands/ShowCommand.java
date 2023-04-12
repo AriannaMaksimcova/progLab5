@@ -8,6 +8,9 @@ public class ShowCommand implements Command {
     private String name;
     private String description;
 
+    /**
+     * CLass that allows to create command "show" and execute it.
+     */
     public ShowCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

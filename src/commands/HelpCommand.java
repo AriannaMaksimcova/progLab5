@@ -7,7 +7,9 @@ public class HelpCommand implements Command {
     private CommandList commandList;
     private String name;
     private String description;
-
+    /**
+     * Class that allows to create command "help" and execute it.
+     */
     public HelpCommand(String name, String description, CommandList commandList) {
         this.commandList = commandList;
         this.name = name;

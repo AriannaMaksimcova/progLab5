@@ -1,7 +1,9 @@
 package organizations;
 
 import java.time.LocalDate;
-
+/**
+ * Class that allows you to create an organization and work with it.
+ */
 public class Organization{
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -24,7 +26,10 @@ public class Organization{
         this.type = type;
         this.postalAddress = postalAddress;
     }
-
+    /**
+     * Method that converts an object of this class to a string.
+     * @return String
+     */
     @Override
     public String toString() {
         return "Organization{ " +
@@ -39,34 +44,55 @@ public class Organization{
                 ", postalAddress = " + postalAddress +
                 '}';
     }
-
+    /**
+     * Method that converts an object of this class to CSV format.
+     * @return String
+     */
     public String toCSV() {
         return id + ";" + name + ";" + coordinates.getX() + ";" + coordinates.getY() + ";" + creationDate + ";"
                 + annualTurnover + ";" + fullName + ";" + employeesCount + ";" + type + ";"
-                + postalAddress.getZipCode() + ";" + postalAddress.getTown().toString();
+                + postalAddress.getZipCode() + ";" + postalAddress.getTown().toString() + "\n";
     }
 
-
+    /**
+     * Method that returns field id.
+     * @return int
+     */
     public int getId() {
         return id;
     }
-
+    /**
+     * Method that returns field postalAddress.
+     * @return Address
+     */
     public Address getPostalAddress() {
         return postalAddress;
     }
-
+    /**
+     * Method that returns field name.
+     * @return String
+     */
     public String getName() {
         return name;
     }
-
+    /**
+     * Method that returns field annualTurnover.
+     * @return Integer
+     */
     public Integer getAnnualTurnover() {
         return annualTurnover;
     }
-
+    /**
+     * Method that returns field fullName.
+     * @return String
+     */
     public String getFullName() {
         return fullName;
     }
-
+    /**
+     * Method that returns field employeeCount.
+     * @return long
+     */
     public long getEmployeesCount() {
         return employeesCount;
     }

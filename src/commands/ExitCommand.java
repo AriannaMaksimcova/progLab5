@@ -7,7 +7,9 @@ public class ExitCommand implements Command {
     private CommandList collection;
     private String name;
     private String description;
-
+    /**
+     * Class that allows to create command "exit" and execute it.
+     */
     public ExitCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

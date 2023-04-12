@@ -4,7 +4,10 @@ import commands.*;
 import interfaces.Command;
 
 import java.util.LinkedHashMap;
-
+/**
+ * Class that contains Map with commands.
+ * Sends a request for command execution.
+ */
 public class CommandExecutor {
     private static LinkedHashMap<String, Command> commands;
     private CommandList commandList;
@@ -42,7 +45,9 @@ public class CommandExecutor {
                 new FilterGreaterThanPostalAddressCommand("filter_greater_than_postal_address",
                         "вывести элементы, значение поля postalAddress которых больше заданного",commandList));
     }
-
+    /**
+     * Method that sends request for command execution.
+     */
     public void executeCommand (String command, String arg){
             if (commands.containsKey(command)) {
                 this.commands.get(command).execute(arg);

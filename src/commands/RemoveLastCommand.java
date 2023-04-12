@@ -7,7 +7,9 @@ public class RemoveLastCommand implements Command {
     private CommandList collection;
     private String name;
     private String description;
-
+    /**
+     * CLass that allows to create command "remove_last" and execute it.
+     */
     public RemoveLastCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

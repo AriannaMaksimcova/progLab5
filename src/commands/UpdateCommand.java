@@ -7,7 +7,9 @@ public class UpdateCommand implements Command {
     private CommandList collection;
     private String name;
     private String description;
-
+    /**
+    * CLass that allows to create command "update" and execute it.
+    */
     public UpdateCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

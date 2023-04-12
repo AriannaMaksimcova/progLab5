@@ -11,7 +11,9 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.TreeSet;
-
+/**
+ * Class for reading organization from command line.
+ */
 public class OrganizationReader {
     private Stack<Organization> stack;
     private Validator validator;
@@ -22,7 +24,10 @@ public class OrganizationReader {
         validator = new Validator();
         this.scanner = scanner;
     }
-
+    /**
+     * Method for reading input new organization's parameters.
+     * @return Organization
+     */
     public Organization readOrganization(){
         int id = generateID();
         String name = readOrganizationName();
@@ -37,6 +42,10 @@ public class OrganizationReader {
         return new Organization(id, name, new Coordinates(x, y), creationDate, annualTurnover, fullName,
                 employeeCount, organizationType, postalAddress);
     }
+    /**
+     * Method for generating ID for organization.
+     * @return int
+     */
     private int generateID(){
         TreeSet<Integer> IDs = new TreeSet<>();
         int id = 0;
@@ -51,8 +60,12 @@ public class OrganizationReader {
         }
         return id;
     }
+    /**
+     * Method for reading organization's name.
+     * @return String
+     */
     private String readOrganizationName(){
-        System.out.println("Organization's name:");
+        System.out.println("Organization's name (String):");
         String name = scanner.nextLine();
         while(Objects.equals(name, "") || name == null){
             System.out.println("Try again.");
@@ -60,24 +73,36 @@ public class OrganizationReader {
         }
         return name;
     }
+    /**
+     * Method for reading organization's coordinate X.
+     * @return float
+     */
     private float readCoordinateX(){
-        System.out.println("Enter the X coordinate:");
+        System.out.println("Enter the X coordinate (float, <= 75):");
         String str = scanner.nextLine().replace(",",".");
         while(!validator.validateCoordinateX(str)){
             str = scanner.nextLine().replace(",",".");
         }
         return Float.parseFloat(str);
     }
+    /**
+     * Method for reading organization's coordinate Y.
+     * @return int
+     */
     private int readCoordinateY(){
-        System.out.println("Enter the Y coordinate:");
+        System.out.println("Enter the Y coordinate (int, > -177):");
         String str = scanner.nextLine();
         while(!validator.validateCoordinateY(str)){
             str = scanner.nextLine();
         }
         return Integer.parseInt(str);
     }
+    /**
+     * Method for reading organization's annual turnover.
+     * @return int
+     */
     private int readAnnualTurnover(){
-        System.out.println("Enter annual turnover:");
+        System.out.println("Enter annual turnover (int, > 0):");
         int annualTurnover;
         while(true){
             String annualTurnoverStr = scanner.nextLine();
@@ -97,8 +122,12 @@ public class OrganizationReader {
         }
         return annualTurnover;
     }
+    /**
+     * Method for reading organization's full name.
+     * @return String
+     */
     private String readFullName(){
-        System.out.println("Enter full name:");
+        System.out.println("Enter full name (String):");
         String fullName;
         while(true) {
             fullName = scanner.nextLine();
@@ -111,8 +140,12 @@ public class OrganizationReader {
         }
         return fullName;
     }
+    /**
+     * Method for reading organization's employee count.
+     * @return long
+     */
     private long readEmployeeCount(){
-        System.out.println("Enter employee count:");
+        System.out.println("Enter employee count (long, > 0):");
         long employeeCount;
         while(true) {
             String employeeCountStr = scanner.nextLine();
@@ -132,6 +165,10 @@ public class OrganizationReader {
         }
         return employeeCount;
     }
+    /**
+     * Method for reading organization's type.
+     * @return OrganizationType
+     */
     private OrganizationType readOrganizationType(){
         System.out.println("Enter organization type from list \"COMMERCIAL, PUBLIC, GOVERNMENT," +
                 " PRIVATE_LIMITED_COMPANY, OPEN_JOINT_STOCK_COMPANY\":");

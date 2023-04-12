@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71ea4b7a-e229-4f55-9d1f-adfa2ba55520" name="Changes" comment="some problems(1)">
+    <list default="true" id="71ea4b7a-e229-4f55-9d1f-adfa2ba55520" name="Changes" comment="all have done (without javadoc)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example.csv" beforeDir="false" afterPath="$PROJECT_DIR$/example.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ClearCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" afterDir="false" />
@@ -24,15 +23,25 @@
       <change beforePath="$PROJECT_DIR$/src/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ShowCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/ShuffleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ShuffleCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/organizations/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/AddressComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comparators/AddressComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/FullNameComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comparators/FullNameComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Organization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/OrganizationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/OrganizationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/OrganizationsComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comparators/OrganizationsComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CommandExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/CommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CommandList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/ConsoleManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/OrganizationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/OrganizationReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validators/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/organizations/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/organizations/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tools/CommandExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/CommandExecutor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/Organization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/organizations/Organization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tools/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/FileHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tools/OrganizationReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/OrganizationReader.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +107,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="my-app" />
-      <option name="PROGRAM_PARAMETERS" value="example.csv" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/example.csv" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,7 +154,8 @@
       <workItem from="1680262824385" duration="592000" />
       <workItem from="1680610390926" duration="18930000" />
       <workItem from="1680885378910" duration="675000" />
-      <workItem from="1681202981861" duration="11037000" />
+      <workItem from="1681202981861" duration="12707000" />
+      <workItem from="1681282856507" duration="7170000" />
     </task>
     <task id="LOCAL-00001" summary="Command classes done">
       <created>1677952154188</created>
@@ -196,7 +206,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680885455938</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="all have done (without javadoc)">
+      <created>1681242993138</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681242993138</updated>
+    </task>
+    <task id="LOCAL-00009" summary="all have done (without javadoc)">
+      <created>1681244391300</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681244391300</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +244,8 @@
     <MESSAGE value="FileHandler created" />
     <MESSAGE value="some problems" />
     <MESSAGE value="some problems(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="some problems(1)" />
+    <MESSAGE value="all have done (without javadoc)" />
+    <option name="LAST_COMMIT_MESSAGE" value="all have done (without javadoc)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/progLab5$Main.ic" NAME="Main Coverage Results" MODIFIED="1678886786453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

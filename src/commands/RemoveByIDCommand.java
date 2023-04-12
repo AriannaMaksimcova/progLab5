@@ -6,7 +6,9 @@ public class RemoveByIDCommand implements Command {
     private CommandList collection;
     private String name;
     private String description;
-
+    /**
+     * CLass that allows to create command "remove_by_id" and execute it.
+     */
     public RemoveByIDCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

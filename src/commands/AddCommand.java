@@ -10,7 +10,9 @@ public class AddCommand implements Command {
     private String name;
     private String description;
 
-
+    /**
+     * Class that allows to create command "add" and execute it.
+     */
     public AddCommand(String name, String description, CommandList commandList) {
         this.name = name;
         this.description = description;

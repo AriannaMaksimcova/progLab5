@@ -8,6 +8,9 @@ public class ShuffleCommand implements Command {
     private String name;
     private String description;
 
+    /**
+     * CLass that allows to create command "shuffle" and execute it.
+     */
     public ShuffleCommand(String name, String description, CommandList collection) {
         this.collection = collection;
         this.name = name;

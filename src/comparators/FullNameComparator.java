@@ -1,8 +1,13 @@
-package organizations;
+package comparators;
+
+import organizations.Organization;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * Class-comparator that compares organization's field fullName.
+ */
 public class FullNameComparator implements Comparator<Organization> {
     @Override
     public int compare(Organization org1, Organization org2) {

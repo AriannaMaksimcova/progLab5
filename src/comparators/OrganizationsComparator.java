@@ -1,7 +1,11 @@
-package organizations;
+package comparators;
+
+import organizations.Organization;
 
 import java.util.Comparator;
-
+/**
+ * Class-comparator that compares organizations.
+ */
 public class OrganizationsComparator implements Comparator<Organization> {
     @Override
     public int compare(Organization o1, Organization o2) {

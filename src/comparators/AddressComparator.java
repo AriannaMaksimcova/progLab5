@@ -1,7 +1,11 @@
-package organizations;
+package comparators;
+
+import organizations.Address;
 
 import java.util.Comparator;
-
+/**
+ * Class-comparator that compares organization's field postalAddress.
+ */
 public class AddressComparator implements Comparator<Address> {
     @Override
     public int compare(Address o1, Address o2) {

@@ -6,7 +6,9 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.Stack;
-
+/**
+ * Class for working with file in CSV format.
+ */
 public class FileHandler {
     private Stack<Organization> organizations;
     private File file;
@@ -15,19 +17,25 @@ public class FileHandler {
         this.organizations = organizations;
         this.file = file;
     }
+    /**
+     * Method for writing stack of organizations into file.
+     */
     public void writeData(){
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
-            for(Organization o : organizations){
-                fileOutputStream.write(o.toCSV().getBytes());
+            for(Organization organization : organizations){
+                String row = organization.toCSV() ;
+                fileOutputStream.write(row.getBytes());
             }
-
             fileOutputStream.close();
-
         } catch (IOException e) {
             System.out.println("File not found.");
         }
     }
+    /**
+     * Method for reading organizations from file.
+     * @return Stack
+     */
     public Stack<Organization> readData(){
         FileReader fileReader = null;
         try {
@@ -50,7 +58,7 @@ public class FileHandler {
             long employeeCount = Long.parseLong(record[7]);
             OrganizationType type = OrganizationType.valueOf(record[8]);
             String zipCode = record[9];
-            Double x1 = Double.parseDouble(record[10]);
+            double x1 = Double.parseDouble(record[10]);
             int y1 = Integer.parseInt(record[11]);
             Long z1 = Long.parseLong(record[12]);
             Address address = new Address(zipCode, new Location(x1, y1, z1));

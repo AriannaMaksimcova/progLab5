@@ -13,9 +13,9 @@ public class Address {
 
     public static Address readAddress(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter zip code for address:");
+        System.out.println("Enter zip code for address (String):");
         String zipCode = scanner.nextLine();
-        System.out.println("Enter coordinate X of town location:");
+        System.out.println("Enter coordinate X of town location (double):");
         double x2;
         while(true) {
             String x = scanner.nextLine();
@@ -27,7 +27,7 @@ public class Address {
                 System.out.println("Incorrect input data");
             }
         }
-        System.out.println("Enter coordinate Y of town location:");
+        System.out.println("Enter coordinate Y of town location (int):");
         int y2;
         while(true) {
             String y = scanner.nextLine();
@@ -39,8 +39,8 @@ public class Address {
                 System.out.println("Incorrect input data");
             }
         }
-        System.out.println("Enter coordinate Z of town location:");
-        Long z2;
+        System.out.println("Enter coordinate Z of town location (long):");
+        long z2;
         while(true) {
             String z = scanner.nextLine();
             try {
