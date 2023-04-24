@@ -1,27 +1,18 @@
 package commands;
 
-import interfaces.Command;
+import organizations.Address;
 import tools.CommandList;
 
-public class FilterGreaterThanPostalAddressCommand implements Command {
-    private final CommandList commandList;
-    private final String name;
-    private final String description;
+public class FilterGreaterThanPostalAddressCommand extends Command {
     /**
      * Class that allows to create command "filter_grater_than_postal_address" and execute it.
      */
-    public FilterGreaterThanPostalAddressCommand(String name, String description, CommandList commandList) {
-        this.commandList = commandList;
-        this.name = name;
-        this.description = description;
+    public FilterGreaterThanPostalAddressCommand(String name, String description, CommandList commandList, boolean needObject) {
+        super(name, description, commandList, needObject);
     }
     @Override
-    public void execute(String arg){
-        commandList.filter_greater_than_postal_address();
+    public void execute(Address postalAddress){
+        commandList.filter_greater_than_postal_address(postalAddress);
     }
 
-    @Override
-    public String toString() {
-        return name + ": " + description;
-    }
 }

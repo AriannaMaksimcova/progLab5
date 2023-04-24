@@ -1,27 +1,17 @@
 package commands;
 
-import interfaces.Command;
+import organizations.Organization;
 import tools.CommandList;
 
-public class RemoveLoverCommand implements Command {
-    private final CommandList commandList;
-    private final String name;
-    private final String description;
+public class RemoveLoverCommand extends Command {
     /**
      * CLass that allows to create command "remove_lover" and execute it.
      */
-    public RemoveLoverCommand(String name, String description, CommandList commandList) {
-        this.commandList = commandList;
-        this.name = name;
-        this.description = description;
+    public RemoveLoverCommand(String name, String description, CommandList commandList, boolean needObject) {
+        super(name, description, commandList, needObject);
     }
     @Override
-    public void execute(String arg){
-        commandList.remove_lower();
-    }
-
-    @Override
-    public String toString() {
-        return name + ": " + description;
+    public void execute(Organization organization){
+        commandList.remove_lower(organization);
     }
 }

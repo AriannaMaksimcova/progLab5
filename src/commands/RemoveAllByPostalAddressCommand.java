@@ -1,27 +1,17 @@
 package commands;
 
-import interfaces.Command;
+import organizations.Address;
 import tools.CommandList;
 
-public class RemoveAllByPostalAddressCommand implements Command{
-    private final CommandList commandList;
-    private final String name;
-    private final String description;
+public class RemoveAllByPostalAddressCommand extends Command{
     /**
      * Class that allows to create command "remove_all_by_postal_address" and execute it.
      */
-    public RemoveAllByPostalAddressCommand(String name, String description, CommandList commandList) {
-        this.commandList = commandList;
-        this.name = name;
-        this.description = description;
+    public RemoveAllByPostalAddressCommand(String name, String description, CommandList commandList, boolean needObject) {
+        super(name, description, commandList, needObject);
     }
     @Override
-    public void execute(String arg){
-        commandList.remove_all_by_postal_address();
-    }
-
-    @Override
-    public String toString() {
-        return name + ": " + description;
+    public void execute(Address postalAddress){
+        commandList.remove_all_by_postal_address(postalAddress);
     }
 }

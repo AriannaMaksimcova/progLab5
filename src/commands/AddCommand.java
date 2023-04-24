@@ -1,29 +1,18 @@
 package commands;
 
-import interfaces.Command;
+import organizations.Organization;
 import tools.CommandList;
 
-public class AddCommand implements Command {
-    private final CommandList commandList;
-    private final String name;
-    private final String description;
-
+public class AddCommand extends Command {
     /**
      * Class that allows to create command "add" and execute it.
      */
-    public AddCommand(String name, String description, CommandList commandList) {
-        this.name = name;
-        this.description = description;
-        this.commandList = commandList;
+    public AddCommand(String name, String description, CommandList commandList, boolean needObject) {
+        super(name, description, commandList, needObject);
     }
 
     @Override
-    public void execute(String arg) {
-        commandList.add();
-    }
-
-    @Override
-    public String toString() {
-        return name + ": " + description;
+    public void execute(Organization arg) {
+        this.commandList.add(arg);
     }
 }

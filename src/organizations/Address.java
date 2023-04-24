@@ -1,5 +1,7 @@
 package organizations;
 
+import tools.WrongDataInFileException;
+
 import java.util.Scanner;
 
 public class Address {
@@ -9,12 +11,12 @@ public class Address {
     public Address(String zipCode, Location town) {
         this.zipCode = zipCode;
         this.town = town;
+
     }
 
-    public static Address readAddress(){
-        Scanner scanner = new Scanner(System.in);
+    public static Address readAddress(Scanner scanner){
         System.out.println("Enter zip code for address (String):");
-        String zipCode = scanner.nextLine();
+        String zipCode = scanner.nextLine().replace(";","");
         System.out.println("Enter coordinate X of town location (double):");
         double x2;
         while(true) {
@@ -52,6 +54,25 @@ public class Address {
             }
         }
         return new Address(zipCode, new Location(x2, y2, z2));
+    }
+
+    public static Address readAddressFromFile(Scanner scanner) throws WrongDataInFileException {
+        try {
+            String zipCode = scanner.nextLine().replace(";","");
+            double x2;
+            String x = scanner.nextLine();
+            x2 = Double.parseDouble(x);
+            int y2;
+            String y = scanner.nextLine();
+            y2 = Integer.parseInt(y);
+            long z2;
+            String z = scanner.nextLine();
+            z2 = Long.parseLong(z);
+
+            return new Address(zipCode, new Location(x2, y2, z2));
+        } catch (NumberFormatException e) {
+            throw new WrongDataInFileException();
+        }
     }
 
     @Override

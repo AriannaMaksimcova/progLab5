@@ -1,19 +1,14 @@
 package commands;
 
-import interfaces.Command;
+
 import tools.CommandList;
 
-public class ExitCommand implements Command {
-    private final CommandList commandList;
-    private final String name;
-    private final String description;
+public class ExitCommand extends Command {
     /**
      * Class that allows to create command "exit" and execute it.
      */
-    public ExitCommand(String name, String description, CommandList commandList) {
-        this.commandList = commandList;
-        this.name = name;
-        this.description = description;
+    public ExitCommand(String name, String description, CommandList commandList, boolean needObject) {
+        super(name, description, commandList, needObject);
     }
 
     @Override
@@ -21,8 +16,4 @@ public class ExitCommand implements Command {
         commandList.exit();
     }
 
-    @Override
-    public String toString() {
-        return name + ": " + description;
-    }
 }

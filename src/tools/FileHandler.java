@@ -21,23 +21,29 @@ public class FileHandler {
     /**
      * Method for writing stack of organizations into file.
      */
-    public void writeData(){
+    public void writeData() {
+        if (file.canWrite()) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(file);
-            for(Organization organization : organizations){
-                String row = organization.toCSV() ;
+            for (Organization organization : organizations) {
+                String row = organization.toCSV();
                 fileOutputStream.write(row.getBytes());
             }
             fileOutputStream.close();
         } catch (IOException e) {
             System.out.println("Something went wrong.");
         }
+    } else {
+            System.out.println("No access to write in file.");
+        }
+
     }
     /**
      * Method for reading organizations from file.
      * @return Stack
      */
     public Stack<Organization> readData() {
+        if(file.canRead()){
         FileReader fileReader = null;
         ArrayList<Integer> ids = new ArrayList<>();
         try {
@@ -82,5 +88,9 @@ public class FileHandler {
                     "you can continue working with the program. Otherwise, change file and restart the program.");
         }
         return organizations;
+    }else {
+            System.out.println("No access to read file.");
+            return null;
+        }
     }
 }

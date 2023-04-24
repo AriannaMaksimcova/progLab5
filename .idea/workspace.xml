@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71ea4b7a-e229-4f55-9d1f-adfa2ba55520" name="Changes" comment="finish version 1.0">
+    <list default="true" id="71ea4b7a-e229-4f55-9d1f-adfa2ba55520" name="Changes" comment="finish version 1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example.csv" beforeDir="false" afterPath="$PROJECT_DIR$/example.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -29,18 +29,38 @@
       <change beforePath="$PROJECT_DIR$/src/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ShowCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/ShuffleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ShuffleCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/organizations/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/organizations/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/organizations/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/organizations/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/organizations/Organization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CommandExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/CommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CommandList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/OrganizationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/OrganizationReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/organizations/Organization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/organizations/Organization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tools/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tools/OrganizationReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/OrganizationReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/AddCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/AddCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/ClearCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/ClearCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/ExecuteScriptCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/ExecuteScriptCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/ExitCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/ExitCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/FilterGreaterThanPostalAddressCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/FilterGreaterThanPostalAddressCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/HelpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/HelpCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/InfoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/InfoCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/MinByFullNameCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/MinByFullNameCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveAllByPostalAddressCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveAllByPostalAddressCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveByIDCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveByIDCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveLastCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveLastCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveLoverCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveLoverCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/SaveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/SaveCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/ShowCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/ShowCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/ShuffleCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/ShuffleCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/UpdateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/UpdateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/AddressComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/Coordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/organizations/Coordinates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/FullNameComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/organizations/Location.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/OrganizationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/organizations/OrganizationType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/organizations/OrganizationsComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tools/CommandExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/CommandExecutor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tools/CommandList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/CommandList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/validators/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/validators/Validator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,24 +101,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tools" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/" />
     </key>
   </component>
@@ -154,7 +178,10 @@
       <workItem from="1680610390926" duration="18930000" />
       <workItem from="1680885378910" duration="675000" />
       <workItem from="1681202981861" duration="12707000" />
-      <workItem from="1681282856507" duration="13761000" />
+      <workItem from="1681282856507" duration="14092000" />
+      <workItem from="1681478910952" duration="910000" />
+      <workItem from="1682161927458" duration="7761000" />
+      <workItem from="1682184749294" duration="16277000" />
     </task>
     <task id="LOCAL-00001" summary="Command classes done">
       <created>1677952154188</created>
@@ -226,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681296303430</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="finish version 1.1">
+      <created>1681306182181</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681306182183</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +286,18 @@
     <MESSAGE value="some problems(1)" />
     <MESSAGE value="all have done (without javadoc)" />
     <MESSAGE value="finish version 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish version 1.0" />
+    <MESSAGE value="finish version 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish version 1.1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/progLab5$Main.ic" NAME="Main Coverage Results" MODIFIED="1678886786453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

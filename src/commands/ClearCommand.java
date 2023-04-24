@@ -1,19 +1,13 @@
 package commands;
 
-import interfaces.Command;
 import tools.CommandList;
 
-public class ClearCommand implements Command {
-    private final CommandList commandList;
-    private final String name;
-    private final String description;
+public class ClearCommand extends Command {
     /**
      * Class that allows to create command "clear" and execute it.
      */
-    public ClearCommand(String name, String description, CommandList commandList) {
-        this.commandList = commandList;
-        this.name = name;
-        this.description = description;
+    public ClearCommand(String name, String description, CommandList commandList, boolean needObject) {
+        super(name, description, commandList, needObject);
     }
 
     @Override
@@ -21,8 +15,5 @@ public class ClearCommand implements Command {
         commandList.clear();
     }
 
-    @Override
-    public String toString() {
-        return name + ": " + description;
-    }
+
 }

@@ -18,6 +18,7 @@ public class OrganizationReader {
     private final Stack<Organization> stack;
     private final Validator validator;
     Scanner scanner;
+    TreeSet<Integer> IDs = new TreeSet<>();
 
     public OrganizationReader(Stack<Organization> stack, Scanner scanner) {
         this.stack = stack;
@@ -30,15 +31,15 @@ public class OrganizationReader {
      */
     public Organization readOrganization(){
         int id = generateID();
-        String name = readOrganizationName();
+        String name = readOrganizationName().replace(";","");
         float x = readCoordinateX();
         int y = readCoordinateY();
         LocalDate creationDate = LocalDate.now();
         int annualTurnover = readAnnualTurnover();
-        String fullName = readFullName();
+        String fullName = readFullName().replace(";","");
         long employeeCount = readEmployeeCount();
         OrganizationType organizationType = readOrganizationType();
-        Address postalAddress = Address.readAddress();
+        Address postalAddress = Address.readAddress(scanner);
         return new Organization(id, name, new Coordinates(x, y), creationDate, annualTurnover, fullName,
                 employeeCount, organizationType, postalAddress);
     }
@@ -47,7 +48,6 @@ public class OrganizationReader {
      * @return int
      */
     private int generateID(){
-        TreeSet<Integer> IDs = new TreeSet<>();
         int id = 0;
         for(Organization element : stack){
             IDs.add(element.getId());
@@ -64,7 +64,7 @@ public class OrganizationReader {
      * Method for reading organization's name.
      * @return String
      */
-    private String readOrganizationName(){
+    public String readOrganizationName(){
         System.out.println("Organization's name (String):");
         String name = scanner.nextLine();
         while(Objects.equals(name, "") || name == null){
@@ -77,7 +77,7 @@ public class OrganizationReader {
      * Method for reading organization's coordinate X.
      * @return float
      */
-    private float readCoordinateX(){
+    public float readCoordinateX(){
         System.out.println("Enter the X coordinate (float, <= 75):");
         String str = scanner.nextLine().replace(",",".");
         while(!validator.validateCoordinateX(str)){
@@ -89,7 +89,7 @@ public class OrganizationReader {
      * Method for reading organization's coordinate Y.
      * @return int
      */
-    private int readCoordinateY(){
+    public int readCoordinateY(){
         System.out.println("Enter the Y coordinate (int, > -177):");
         String str = scanner.nextLine();
         while(!validator.validateCoordinateY(str)){
@@ -101,7 +101,7 @@ public class OrganizationReader {
      * Method for reading organization's annual turnover.
      * @return int
      */
-    private int readAnnualTurnover(){
+    public int readAnnualTurnover(){
         System.out.println("Enter annual turnover (int, > 0):");
         int annualTurnover;
         while(true){
@@ -126,7 +126,7 @@ public class OrganizationReader {
      * Method for reading organization's full name.
      * @return String
      */
-    private String readFullName(){
+    public String readFullName(){
         System.out.println("Enter full name (String):");
         String fullName;
         while(true) {
@@ -144,7 +144,7 @@ public class OrganizationReader {
      * Method for reading organization's employee count.
      * @return long
      */
-    private long readEmployeeCount(){
+    public long readEmployeeCount(){
         System.out.println("Enter employee count (long, > 0):");
         long employeeCount;
         while(true) {
@@ -169,7 +169,7 @@ public class OrganizationReader {
      * Method for reading organization's type.
      * @return OrganizationType
      */
-    private OrganizationType readOrganizationType(){
+    public OrganizationType readOrganizationType(){
         System.out.println("Enter organization type from list \"COMMERCIAL, PUBLIC, GOVERNMENT," +
                 " PRIVATE_LIMITED_COMPANY, OPEN_JOINT_STOCK_COMPANY\":");
         String orgType;
@@ -179,5 +179,29 @@ public class OrganizationReader {
             orgType = scanner.nextLine();
         }
         return OrganizationType.valueOf(orgType.toUpperCase());
+    }
+
+    public Organization readOrganizationFromFile(Scanner scanner) throws WrongDataInFileException{
+        try {
+            int id = generateID();
+            String name = scanner.nextLine().replace(";","");
+            float x = scanner.nextFloat();
+            int y = scanner.nextInt();
+            LocalDate creationDate = LocalDate.now();
+            int annualTurnover = scanner.nextInt();
+            String fullName = scanner.nextLine().replace(";","");
+            long employeeCount = scanner.nextLong();
+            OrganizationType organizationType = OrganizationType.valueOf(scanner.nextLine().toUpperCase());
+            Address postalAddress = Address.readAddressFromFile(scanner);
+            return new Organization(id, name, new Coordinates(x, y), creationDate, annualTurnover, fullName,
+                    employeeCount, organizationType, postalAddress);
+        } catch (Exception e){
+            throw new WrongDataInFileException();
+        }
+
+    }
+
+    public TreeSet<Integer> getIDs() {
+        return IDs;
     }
 }

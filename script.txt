@@ -1,0 +1,20 @@
+info
+add
+jhfwajg
+wjehfjah
+djhajw
+show
+execute_script /Volumes/Transcend/универ/ITMO-study/Programming/progLab5/script.txt
+info
+add
+hefj
+453
+3423
+ergwewerwe
+435893
+breaking news
+hello
+shuffle
+save
+clear
+exit
