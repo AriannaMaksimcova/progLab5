@@ -44,7 +44,7 @@ public class ConsoleHandler {
                     }
                 }
             }
-            catch (NoSuchElementException e) {
+            catch (NoSuchElementException | NullPointerException e) {
                 commandExecutor.executeCommand("exit", "");
                 break;
             }

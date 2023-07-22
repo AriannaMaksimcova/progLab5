@@ -17,6 +17,11 @@ public class Main {
     public static void main(String[] args){
         //Создание коллекции
         Stack<Organization> organizations = new Stack<>();
+        try {
+
+        }catch (Exception e){
+
+        }
 
         if(!Objects.equals(args[0], "")){
             File file = new File(args[0]);
