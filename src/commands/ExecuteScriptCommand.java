@@ -62,9 +62,7 @@ public class ExecuteScriptCommand extends Command {
                             } else if (command.equals("remove_all_by_postal_address" )||
                                     command.equals("filter_greater_than_postal_address")) {
                                 Address address = Address.readAddressFromFile(scanner);
-                                if(address != null){
-                                    commandExecutor.executeCommand(command, address);
-                                }
+                                commandExecutor.executeCommand(command, address);
                             }
                         }else {
                             commandExecutor.executeCommand(command,"");
