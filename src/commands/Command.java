@@ -3,6 +3,9 @@ package commands;
 import organizations.Address;
 import organizations.Organization;
 import tools.CommandList;
+/**
+ * Command abstract class.
+ */
 
 public abstract class Command {
     protected final String name;

@@ -5,6 +5,10 @@ import organizations.Address;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Class that controlling what happens in console.
+ */
+
 public class ConsoleHandler {
     private final Scanner scanner;
     private final CommandExecutor commandExecutor;
@@ -47,10 +51,6 @@ public class ConsoleHandler {
             catch (ArrayIndexOutOfBoundsException | NoSuchElementException | NullPointerException e){
                 System.out.println("There is no such command.");
             }
-            //catch (NullPointerException e) {
-                //commandExecutor.executeCommand("exit", "");
-                //break;
-           // }
         }
     }
 }
