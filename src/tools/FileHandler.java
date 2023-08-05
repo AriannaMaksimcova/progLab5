@@ -57,6 +57,7 @@ public class FileHandler {
             while ((scanner.hasNextLine())) {
                 String[] record = scanner.nextLine().split(";");
                 int id = Integer.parseInt(record[0]);
+                OrganizationReader.addID(id);
                 if (ids.contains(id)){
                     throw new NumberFormatException();
                 }else{

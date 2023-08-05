@@ -18,7 +18,7 @@ public class OrganizationReader {
     private final Stack<Organization> stack;
     private final Validator validator;
     Scanner scanner;
-    TreeSet<Integer> IDs = new TreeSet<>();
+    public static TreeSet<Integer> IDs = new TreeSet<>();
 
     public OrganizationReader(Stack<Organization> stack, Scanner scanner) {
         this.stack = stack;
@@ -58,6 +58,7 @@ public class OrganizationReader {
                 break;
             }
         }
+        IDs.add(id);
         return id;
     }
     /**
@@ -189,8 +190,10 @@ public class OrganizationReader {
             int y = scanner.nextInt();
             LocalDate creationDate = LocalDate.now();
             int annualTurnover = scanner.nextInt();
+            scanner.nextLine();
             String fullName = scanner.nextLine().replace(";","");
             long employeeCount = scanner.nextLong();
+            scanner.nextLine();
             OrganizationType organizationType = OrganizationType.valueOf(scanner.nextLine().toUpperCase());
             Address postalAddress = Address.readAddressFromFile(scanner);
             return new Organization(id, name, new Coordinates(x, y), creationDate, annualTurnover, fullName,
@@ -203,5 +206,8 @@ public class OrganizationReader {
 
     public TreeSet<Integer> getIDs() {
         return IDs;
+    }
+    public static void addID(int id){
+        IDs.add(id);
     }
 }

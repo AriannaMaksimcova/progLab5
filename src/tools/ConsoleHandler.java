@@ -44,10 +44,13 @@ public class ConsoleHandler {
                     }
                 }
             }
-            catch (NoSuchElementException | NullPointerException e) {
-                commandExecutor.executeCommand("exit", "");
-                break;
+            catch (ArrayIndexOutOfBoundsException | NoSuchElementException | NullPointerException e){
+                System.out.println("There is no such command.");
             }
+            //catch (NullPointerException e) {
+                //commandExecutor.executeCommand("exit", "");
+                //break;
+           // }
         }
     }
 }

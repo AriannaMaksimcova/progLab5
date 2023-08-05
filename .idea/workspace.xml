@@ -11,8 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="71ea4b7a-e229-4f55-9d1f-adfa2ba55520" name="Changes" comment="final release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.csv" beforeDir="false" afterPath="$PROJECT_DIR$/example.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/script.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/ConsoleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/ConsoleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/OrganizationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/OrganizationReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/ExecuteScriptCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/ExecuteScriptCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +140,8 @@
       <workItem from="1682161927458" duration="7761000" />
       <workItem from="1682184749294" duration="18374000" />
       <workItem from="1685555723726" duration="136000" />
-      <workItem from="1690039949169" duration="3588000" />
+      <workItem from="1690039949169" duration="3644000" />
+      <workItem from="1691243737038" duration="3952000" />
     </task>
     <task id="LOCAL-00001" summary="Command classes done">
       <created>1677952154188</created>
@@ -235,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690040056274</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="final release">
+      <created>1690049724946</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1690049724946</updated>
+    </task>
+    <task id="LOCAL-00016" summary="final release">
+      <created>1690049742089</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690049742089</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +296,24 @@
           <url>file://$PROJECT_DIR$/src/organizations/Address.java</url>
           <line>18</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/tools/OrganizationReader.java</url>
+          <line>184</line>
+          <properties class="tools.OrganizationReader" method="readOrganizationFromFile">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/tools/CommandList.java</url>
+          <line>73</line>
+          <properties class="tools.CommandList" method="update">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
