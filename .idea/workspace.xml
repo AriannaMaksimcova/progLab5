@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="71ea4b7a-e229-4f55-9d1f-adfa2ba55520" name="Changes" comment="final release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/ConsoleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/ConsoleHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tools/ConsoleHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/ConsoleHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tools/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tools/OrganizationReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/OrganizationReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +139,9 @@
       <workItem from="1690039949169" duration="3644000" />
       <workItem from="1691243737038" duration="4359000" />
       <workItem from="1691258184920" duration="225000" />
+      <workItem from="1691258424313" duration="39000" />
+      <workItem from="1691336329449" duration="561000" />
+      <workItem from="1691419256080" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="Command classes done">
       <created>1677952154188</created>
@@ -261,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691248558403</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="final release">
+      <created>1691258449889</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1691258449889</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

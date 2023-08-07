@@ -16,6 +16,7 @@ import java.util.Vector;
 public class ExecuteScriptCommand extends Command {
     private final CommandExecutor commandExecutor;
     private final OrganizationReader organizationReader;
+    private Vector<String> filePaths = new Vector<>();
 
     /**
      * Class that allows to create command "execute_script" and execute it.
@@ -30,7 +31,7 @@ public class ExecuteScriptCommand extends Command {
     @Override
     public void execute(String arg) {
         if (!arg.equals("")) {
-            Vector<String> filePaths = new Vector<>();
+
             File file = new File(arg);
             filePaths.add(arg);
             try {
